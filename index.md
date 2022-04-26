@@ -1,8 +1,8 @@
-## Welcome to Meng Sun's World!
+## Welcome to Meng Sun's World<img src="fig\fig1.png" alt="drawing" width="100"/>
 
 这里写我的话语
 
-### Markdown
+### 自我介绍
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
