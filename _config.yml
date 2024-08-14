@@ -7,18 +7,18 @@ url: ''
 baseurl: 
 
 # Title of the Site
-title: Personal website
+title: Meng's Space
 # Description of the Site
-description: This is Meng
+description: This is Meng's space of everything
 # URL of Image of the Site
-site-image: /assets/images/meta.jpg
+site-image: /assets/images/test01.jpg
 # Keywords of the Site
-site-keywords: Site, Template, Theme
+site-keywords: Personal, Research, Interest
 # URL for the Image of custom Favicon
 favicon-url: 
 
 # URL of the Image of Custom Hero Image (i.e., the image in the background of the very first section of the Homepage)
-heroimage: https://images.pexels.com/photos/220444/pexels-photo-220444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
+heroimage: /assets/images/test02.jpg
 
 # Social Media and Contact
 # If you don't want to use any icon, you can leave them blank.
@@ -26,7 +26,7 @@ email: iamsunm@gmail.com
 facebook_username: thedevslot
 twitter_username: thedevslot
 instagram_username: thedevslot
-linkedin_username: thedevslot
+linkedin_username: meng-sun-177352191
 github_username:  thedevslot
 youtube_channel_id: UCk_93NXYP-U_AOB5GfWlOow
 reddit_username: /

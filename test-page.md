@@ -13,7 +13,6 @@ layout: page
 [This is a link](#)
 
 > This is a blockquote
-
 `This is code`
 
 ### Bullet List
