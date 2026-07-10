@@ -6,7 +6,7 @@ This repository is a **Jekyll 4.x static site** (the "WhatATheme" portfolio + bl
 
 ### Services
 - **Jekyll dev server** — the only service. Run it with `bundle exec jekyll serve --host 0.0.0.0 --port 4000` (README uses the shorthand `bundle exec jekyll s`). Site is served at `http://localhost:4000`.
-- **Jekyll Admin (CMS)** runs in-process as a plugin at `http://localhost:4000/admin/` while the dev server is running. There is no separate process/port.
+- **Jekyll Admin (CMS)** is an *optional* plugin mounted in-process at `http://localhost:4000/admin/`. Its static shell loads, but the admin API (e.g. `/_api/configuration`) returns HTTP 500 because `jekyll-admin` 0.9.0 is incompatible with Jekyll 4.3 (`configuration.rb:36`). This is a pre-existing dependency issue, not an environment problem — the CMS UI is not usable. Author content by editing Markdown files under `_posts/` directly instead.
 
 ### Common commands
 - Build: `bundle exec jekyll build` (output in `_site/`).
