@@ -9,7 +9,7 @@
             {% if item.new %}
               <span class="academic-new-badge" aria-label="New">New</span>
             {% endif %}
-            {{ item.text }}
+            {{ item.text | markdownify }}
           </span>
         </li>
       {% endfor %}

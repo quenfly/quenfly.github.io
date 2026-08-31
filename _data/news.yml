@@ -1,19 +1,20 @@
 # Order: ISARC → TDS → AutoML → LLM+GraphRAG → MC-DEM → CVPR 2024
+# new: true only for 2026 items (animated badge)
 - date: "2026"
-  text: "Paper accepted to ISARC 2026 on reconstructing GPR radargrams into 3D point clouds with a Web AR approach."
+  text: "Two papers accepted to ISARC 2026: [GPR-to-3D Web AR](https://doi.org/10.22260/ISARC2026/0299), [Automated 3D Reinforcement Characterization](https://doi.org/10.22260/ISARC2026/0208)."
   new: true
 - date: "2026"
   text: "Received the Talent Development Scholarship (TDS), The University of Hong Kong."
   new: true
 - date: "2026"
-  text: "Paper on DEM cementation prediction with AutoML and interpretability analysis published in Advanced Engineering Informatics."
+  text: "Paper on DEM cementation prediction with AutoML and interpretability analysis published in [Advanced Engineering Informatics](https://doi.org/10.1016/j.aei.2025.104060)."
   new: true
 - date: "2025"
   text: "Won Best Individual Performance at the 4th Financial Career Accelerator with an LLM + GraphRAG green-finance QA system."
-  new: true
+  new: false
 - date: "2025"
-  text: "Paper on Monte Carlo–DEM sand stiffness variability published in Acta Geotechnica."
-  new: true
+  text: "Paper on Monte Carlo–DEM sand stiffness variability published in [Acta Geotechnica](https://doi.org/10.1007/s11440-025-02539-5)."
+  new: false
 - date: "2024"
   text: "Dual winner of the 4th International Scan-to-BIM Challenge at CVPR 2024 (2D floorplan & 3D building reconstruction)."
   new: false

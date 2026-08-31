@@ -1,10 +1,23 @@
 - name: "GPR-to-3D Point Cloud & Web AR for Building Inspection"
   description: "Reconstructing ground-penetrating radargrams into 3D point cloud format for built-asset inspection, with a web-based AR workflow evaluated via the Technology Acceptance Model."
+  links:
+    code: "https://github.com/quenfly/GPR-AR"
+    paper: "https://doi.org/10.22260/ISARC2026/0299"
   tags:
     - "GPR"
     - "3D reconstruction"
     - "Web AR"
     - "Digital twin"
+
+- name: "3D Reinforcement Characterization"
+  description: "Automated 3D reinforcement characterization in existing buildings using GPR-to-point-cloud reconstruction and weighted RANSAC."
+  links:
+    code: "https://github.com/quenfly/3D-reinforcement-characterization"
+    paper: "https://doi.org/10.22260/ISARC2026/0208"
+  tags:
+    - "GPR"
+    - "3D reconstruction"
+    - "Building inspection"
 
 - name: "AutoML & XAI for DEM Cementation Prediction"
   description: "Integrating automated machine learning and interpretability analysis to clarify shear-wave velocity predictions in discrete element simulation of cemented granular materials."
@@ -24,10 +37,3 @@
     - "Scan-to-BIM"
     - "Computer vision"
     - "BIM"
-
-- name: "Green Finance QA with LLM & GraphRAG"
-  description: "Built a green-finance question-answering system integrating large language models and GraphRAG; won Best Individual Performance at the 4th Financial Career Accelerator (2025)."
-  tags:
-    - "LLM"
-    - "GraphRAG"
-    - "FinTech"

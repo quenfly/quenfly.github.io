@@ -2,14 +2,17 @@
   papers:
     - title: "Automated 3D Reinforcement Characterization in Existing Buildings using GPR-to-Point-Cloud Reconstruction and Weighted RANSAC"
       authors: "<strong>Sun, M.</strong>; Wu, L.; Wei, X.; Liang, D.; Chen, Z.; Kwan, H.; Xue, F."
-      venue: "SSRN Preprint"
-      venue_short: "SSRN"
+      venue: "Proceedings of the 43rd International Symposium on Automation and Robotics in Construction (ISARC 2026)"
+      venue_short: "ISARC"
       links:
-        paper: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7162319"
+        paper: "https://doi.org/10.22260/ISARC2026/0208"
+        arxiv: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7162319"
     - title: "Reconstructing Ground-Penetrating Radargrams into 3D Point Cloud Format for Building Inspection: A Web AR Approach Evaluated by Technology Acceptance Model"
       authors: "<strong>Sun, M.</strong>; Wu, L.; Deng, K.; Li, X.; Xue, F."
       venue: "Proceedings of the 43rd International Symposium on Automation and Robotics in Construction (ISARC 2026)"
       venue_short: "ISARC"
+      links:
+        paper: "https://doi.org/10.22260/ISARC2026/0299"
     - title: "Clarity in DEM cementation predictions: Integrating automated machine learning and interpretability analysis of shear wave velocity"
       authors: "<strong>Sun, M.</strong>; Liang, D.; Wang, J.; Bate, B.; Xue, F."
       venue: "Advanced Engineering Informatics"
