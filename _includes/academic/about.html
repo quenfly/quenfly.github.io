@@ -1,0 +1,14 @@
+{% assign profile = site.data.profile %}
+<section class="academic-section" id="about">
+  <div class="academic-container">
+    <h2 class="academic-section-title">About</h2>
+    <div class="academic-about-text">
+      {{ profile.about | markdownify }}
+    </div>
+    <div class="academic-tags" aria-label="Research interests">
+      {% for tag in profile.research_interests %}
+        <span class="academic-tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</section>

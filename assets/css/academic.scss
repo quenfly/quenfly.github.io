@@ -1,0 +1,383 @@
+---
+---
+
+// Academic personal homepage styles
+
+$text-color: #1a1a1a;
+$text-muted: #555;
+$link-color: #0078b4;
+$link-hover: #005a87;
+$bg-color: #ffffff;
+$bg-alt: #f7f8fa;
+$border-color: #e5e7eb;
+$max-width: 760px;
+$font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: $font-sans;
+  font-size: 16px;
+  line-height: 1.7;
+  color: $text-color;
+  background: $bg-color;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-hover;
+    text-decoration: underline;
+  }
+}
+
+.academic-container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.academic-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid $border-color;
+}
+
+.academic-header-inner {
+  padding-top: 1.25rem;
+  padding-bottom: 1rem;
+}
+
+.academic-name {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      color: $link-color;
+    }
+  }
+}
+
+.academic-name-cn {
+  font-weight: 400;
+  color: $text-muted;
+  margin-left: 0.35rem;
+  font-size: 1.25rem;
+}
+
+.academic-role {
+  margin: 0.25rem 0 0;
+  font-size: 1rem;
+  color: $text-muted;
+}
+
+.academic-affiliation {
+  margin: 0.15rem 0 0;
+  font-size: 0.95rem;
+  color: $text-muted;
+}
+
+.academic-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid $border-color;
+
+  a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $text-color;
+
+    &:hover {
+      color: $link-color;
+    }
+  }
+}
+
+.academic-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-top: 0.65rem;
+  font-size: 0.9rem;
+
+  a {
+    font-weight: 500;
+  }
+}
+
+.academic-link-placeholder {
+  color: #999;
+  font-size: 0.9rem;
+  cursor: default;
+}
+
+.academic-main {
+  padding-bottom: 3rem;
+}
+
+.academic-section {
+  padding: 2.5rem 0;
+
+  &-alt {
+    background: $bg-alt;
+  }
+}
+
+.academic-section-title {
+  margin: 0 0 1.25rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid $text-color;
+}
+
+.academic-subsection-title {
+  margin: 1.75rem 0 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: $text-color;
+
+  &:first-of-type {
+    margin-top: 0.5rem;
+  }
+}
+
+.academic-about-text {
+  p {
+    margin: 0 0 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.academic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.academic-tag {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: $link-color;
+  background: #eef6fb;
+  border: 1px solid #d0e8f5;
+  border-radius: 999px;
+
+  &-sm {
+    font-size: 0.72rem;
+    padding: 0.15rem 0.5rem;
+  }
+}
+
+.academic-tags-compact {
+  margin-top: 0.5rem;
+}
+
+.academic-news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: flex;
+    gap: 1rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid $border-color;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.academic-news-date {
+  flex: 0 0 3rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: $text-muted;
+}
+
+.academic-news-text {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.academic-year {
+  margin: 1.75rem 0 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $text-muted;
+
+  &:first-of-type {
+    margin-top: 0.5rem;
+  }
+}
+
+.academic-paper-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.academic-paper {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid $border-color;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.academic-paper-title {
+  margin: 0 0 0.25rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.academic-paper-authors {
+  margin: 0 0 0.15rem;
+  font-size: 0.9rem;
+  color: $text-muted;
+}
+
+.academic-paper-venue {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.academic-paper-links {
+  margin: 0.35rem 0 0;
+  font-size: 0.88rem;
+
+  a {
+    margin-right: 0.5rem;
+    font-weight: 500;
+  }
+}
+
+.academic-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  background: #f0f0f0;
+  color: $text-muted;
+  vertical-align: middle;
+
+  &-award {
+    background: #fff8e6;
+    color: #9a6700;
+  }
+}
+
+.academic-project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.academic-project {
+  padding: 1rem 0;
+  border-bottom: 1px solid $border-color;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.academic-project-name {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 600;
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: $link-color;
+    }
+  }
+}
+
+.academic-project-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  color: $text-muted;
+}
+
+.academic-simple-list {
+  margin: 0;
+  padding-left: 1.25rem;
+
+  li {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+  }
+}
+
+.academic-footer {
+  padding: 1.5rem 0 2rem;
+  border-top: 1px solid $border-color;
+  text-align: center;
+
+  p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: $text-muted;
+  }
+}
+
+@media (max-width: 600px) {
+  .academic-name {
+    font-size: 1.45rem;
+  }
+
+  .academic-news-list li {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .academic-news-date {
+    flex: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

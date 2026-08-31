@@ -1,0 +1,13 @@
+<section class="academic-section academic-section-alt" id="news">
+  <div class="academic-container">
+    <h2 class="academic-section-title">News</h2>
+    <ul class="academic-news-list">
+      {% for item in site.data.news %}
+        <li>
+          <span class="academic-news-date">{{ item.date }}</span>
+          <span class="academic-news-text">{{ item.text }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

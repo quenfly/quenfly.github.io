@@ -1,0 +1,30 @@
+{% assign profile = site.data.profile %}
+<header class="academic-header" id="top">
+  <div class="academic-container academic-header-inner">
+    <div class="academic-identity">
+      <h1 class="academic-name">
+        <a href="#top">{{ profile.name }}</a>
+        {% if profile.name_cn %}<span class="academic-name-cn">{{ profile.name_cn }}</span>{% endif %}
+      </h1>
+      <p class="academic-role">{{ profile.title }}</p>
+      <p class="academic-affiliation">{{ profile.affiliation }}</p>
+    </div>
+    <nav class="academic-nav" aria-label="Primary">
+      {% for item in profile.nav %}
+        <a href="{{ item.anchor }}">{{ item.name }}</a>
+      {% endfor %}
+    </nav>
+    <div class="academic-links">
+      <a href="mailto:{{ profile.email }}">Email</a>
+      {% if profile.google_scholar != "" %}
+        <a href="{{ profile.google_scholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+      {% endif %}
+      <a href="{{ profile.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+      {% if profile.cv.enabled %}
+        <a href="{{ profile.cv.path | relative_url }}">CV</a>
+      {% else %}
+        <span class="academic-link-placeholder" title="CV will be available soon">CV (soon)</span>
+      {% endif %}
+    </div>
+  </div>
+</header>

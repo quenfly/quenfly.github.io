@@ -1,3 +1,4 @@
 ---
-layout: default
+layout: academic
+title: Home
 ---

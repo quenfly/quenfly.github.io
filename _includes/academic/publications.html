@@ -1,0 +1,26 @@
+<section class="academic-section" id="publications">
+  <div class="academic-container">
+    <h2 class="academic-section-title">Publications</h2>
+    {% for group in site.data.publications %}
+      <h3 class="academic-year">{{ group.year }}</h3>
+      <ol class="academic-paper-list">
+        {% for paper in group.papers %}
+          <li class="academic-paper">
+            <p class="academic-paper-title">{{ paper.title }}{% if paper.status %} <span class="academic-badge">{{ paper.status }}</span>{% endif %}{% if paper.badge %} <span class="academic-badge academic-badge-award">{{ paper.badge }}</span>{% endif %}</p>
+            <p class="academic-paper-authors">{{ paper.authors }}</p>
+            <p class="academic-paper-venue"><em>{{ paper.venue }}</em></p>
+            {% if paper.links %}
+              <p class="academic-paper-links">
+                {% if paper.links.paper %}<a href="{{ paper.links.paper }}" target="_blank" rel="noopener noreferrer">[Paper]</a>{% endif %}
+                {% if paper.links.arxiv %}<a href="{{ paper.links.arxiv }}" target="_blank" rel="noopener noreferrer">[arXiv]</a>{% endif %}
+                {% if paper.links.code %}<a href="{{ paper.links.code }}" target="_blank" rel="noopener noreferrer">[Code]</a>{% endif %}
+                {% if paper.links.slides %}<a href="{{ paper.links.slides }}" target="_blank" rel="noopener noreferrer">[Slides]</a>{% endif %}
+                {% if paper.links.project %}<a href="{{ paper.links.project }}" target="_blank" rel="noopener noreferrer">[Project]</a>{% endif %}
+              </p>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    {% endfor %}
+  </div>
+</section>
