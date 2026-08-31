@@ -65,19 +65,41 @@ a {
   display: none;
 }
 
-.academic-mobile-header {
+.academic-mobile-full {
   display: block;
-  position: sticky;
+  background: $bg-color;
+  border-bottom: 1px solid $border-color;
+}
+
+.academic-mobile-full-inner {
+  padding: 0.85rem 1.25rem 0.75rem;
+}
+
+.academic-mobile-compact {
+  display: block;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid $border-color;
-  overflow-anchor: none;
+  transform: translateY(-100%);
+  visibility: hidden;
+  pointer-events: none;
 }
 
-.academic-mobile-header-inner {
-  padding: 0.85rem 1.25rem 0.75rem;
+body.mobile-compact-nav .academic-mobile-compact {
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.academic-nav-compact {
+  margin: 0;
+  padding: 0.55rem 1.25rem;
+  border-top: none;
 }
 
 .academic-name-sm {
@@ -154,7 +176,8 @@ body.is-scrolled .academic-nav-mobile {
 }
 
 @media (min-width: $mobile-bp) {
-  .academic-mobile-header {
+  .academic-mobile-full,
+  .academic-mobile-compact {
     display: none;
   }
 

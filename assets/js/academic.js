@@ -1,33 +1,43 @@
 (function () {
-  var COLLAPSE_AT = 72;
-  var EXPAND_AT = 12;
-  var collapsed = false;
+  var MOBILE_BP = 900;
+  var DESKTOP_COLLAPSE_AT = 72;
   var ticking = false;
+  var mobileFullHeader = document.getElementById("mobile-header-full");
+  var mobileCompactHeader = document.getElementById("mobile-header-compact");
 
-  function setCollapsed(next) {
-    if (collapsed === next) {
+  function isMobile() {
+    return window.innerWidth < MOBILE_BP;
+  }
+
+  function updateMobileCompactNav() {
+    if (!mobileFullHeader || !mobileCompactHeader) {
       return;
     }
-    collapsed = next;
-    document.body.classList.toggle("is-scrolled", next);
+
+    var showCompact = window.scrollY >= mobileFullHeader.offsetHeight;
+    document.body.classList.toggle("mobile-compact-nav", showCompact);
+    mobileCompactHeader.setAttribute("aria-hidden", showCompact ? "false" : "true");
+  }
+
+  function updateDesktopSidebarCollapse() {
+    document.body.classList.toggle("is-scrolled", window.scrollY > DESKTOP_COLLAPSE_AT);
   }
 
   function onScroll() {
-    var y = window.scrollY;
-    if (!collapsed && y > COLLAPSE_AT) {
-      setCollapsed(true);
-    } else if (collapsed && y < EXPAND_AT) {
-      setCollapsed(false);
+    if (isMobile()) {
+      updateMobileCompactNav();
+    } else {
+      document.body.classList.remove("mobile-compact-nav");
+      updateDesktopSidebarCollapse();
     }
+    updateActiveNav();
   }
 
   function onScrollFrame() {
     ticking = false;
     onScroll();
-    updateActiveNav();
   }
 
-  // Highlight active nav section
   function updateActiveNav() {
     var sections = ["about", "news", "publications", "projects", "others"];
     var scrollPos = window.scrollY + 120;
@@ -44,6 +54,11 @@
     });
   }
 
+  function onResize() {
+    document.body.classList.remove("mobile-compact-nav");
+    onScroll();
+  }
+
   window.addEventListener("scroll", function () {
     if (!ticking) {
       ticking = true;
@@ -51,6 +66,7 @@
     }
   }, { passive: true });
 
+  window.addEventListener("resize", onResize, { passive: true });
+
   onScroll();
-  updateActiveNav();
 })();

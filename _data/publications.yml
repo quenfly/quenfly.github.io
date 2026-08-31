@@ -1,7 +1,7 @@
 - year: 2026
   papers:
     - title: "A Time- and Memory-Efficient Method for Axis Alignment of Very Large Point Clouds using Orthogonality in Buildings"
-      authors: "<strong>Sun, M.</strong>; Wu, L.; Wei, X.; Liang, D.; Chen, Z.; Kwan, H.; Xue, F."
+      authors: "Wu, L.; Chen, S.-H.; <strong>Sun, M.</strong>; Xue, F."
       venue: "Proceedings of the 43rd International Symposium on Automation and Robotics in Construction (ISARC 2026)"
       venue_short: "ISARC"
       links:

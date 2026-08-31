@@ -15,30 +15,32 @@
     </div>
 
     <nav class="academic-nav" aria-label="Primary">
-      {% for item in profile.nav %}
-        <a href="{{ item.anchor }}" class="academic-nav-link">{{ item.name }}</a>
-      {% endfor %}
+      {% include academic/nav-links.html %}
     </nav>
   </div>
 </aside>
 
-<!-- Mobile top bar (mirrors sidebar; collapsed on scroll) -->
-<header class="academic-mobile-header" id="mobile-header">
-  <div class="academic-mobile-header-inner">
-    <div class="academic-identity academic-sidebar-expand">
+<!-- Mobile: full header scrolls away; compact fixed nav appears afterward -->
+<div class="academic-mobile-full" id="mobile-header-full">
+  <div class="academic-mobile-full-inner">
+    <div class="academic-identity">
       <h1 class="academic-name academic-name-sm">
         <a href="#top">{{ profile.name }}</a>
         {% if profile.name_cn %}<span class="academic-name-cn">{{ profile.name_cn }}</span>{% endif %}
       </h1>
       <p class="academic-role">{{ profile.title }} · {{ profile.affiliation }}</p>
     </div>
-    <div class="academic-links academic-sidebar-expand academic-links-inline">
+    <div class="academic-links academic-links-inline">
       {% include academic/profile-links.html compact=true %}
     </div>
     <nav class="academic-nav academic-nav-mobile" aria-label="Primary">
-      {% for item in profile.nav %}
-        <a href="{{ item.anchor }}" class="academic-nav-link">{{ item.name }}</a>
-      {% endfor %}
+      {% include academic/nav-links.html %}
     </nav>
   </div>
-</header>
+</div>
+
+<div class="academic-mobile-compact" id="mobile-header-compact" aria-hidden="true">
+  <nav class="academic-nav academic-nav-mobile academic-nav-compact" aria-label="Primary">
+    {% include academic/nav-links.html %}
+  </nav>
+</div>
