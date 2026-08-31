@@ -1,7 +1,7 @@
 # Order: ISARC → TDS → AutoML → LLM+GraphRAG → MC-DEM → CVPR 2024
 # new: true only for 2026 items (animated badge)
 - date: "2026"
-  text: "Two papers accepted to ISARC 2026: [GPR-to-3D Web AR](https://doi.org/10.22260/ISARC2026/0299), [Automated 3D Reinforcement Characterization](https://doi.org/10.22260/ISARC2026/0208)."
+  text: "Two papers accepted to ISARC 2026: [GPR-to-3D Web AR](https://doi.org/10.22260/ISARC2026/0299), [Axis Alignment of Very Large Point Clouds](https://doi.org/10.22260/ISARC2026/0208)."
   new: true
 - date: "2026"
   text: "Received the Talent Development Scholarship (TDS), The University of Hong Kong."

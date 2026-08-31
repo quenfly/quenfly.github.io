@@ -3,14 +3,12 @@
     <h2 class="academic-section-title">News</h2>
     <ul class="academic-news-list">
       {% for item in site.data.news %}
-        <li>
+        <li class="academic-news-item">
+          {% if item.new %}
+            <span class="academic-new-badge" aria-label="New">New</span>
+          {% endif %}
           <span class="academic-news-date">{{ item.date }}</span>
-          <span class="academic-news-text">
-            {% if item.new %}
-              <span class="academic-new-badge" aria-label="New">New</span>
-            {% endif %}
-            {{ item.text | markdownify }}
-          </span>
+          <span class="academic-news-text">{{ item.text | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</span>
         </li>
       {% endfor %}
     </ul>

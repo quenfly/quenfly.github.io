@@ -73,6 +73,7 @@ a {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid $border-color;
+  overflow-anchor: none;
 }
 
 .academic-mobile-header-inner {
@@ -112,10 +113,11 @@ a {
 
 // Collapse expand parts on scroll (mobile + desktop sidebar)
 .academic-sidebar-expand {
-  max-height: 220px;
+  max-height: 260px;
   opacity: 1;
   overflow: hidden;
   transition: max-height 0.28s ease, opacity 0.22s ease, margin 0.22s ease;
+  will-change: max-height, opacity;
 }
 
 body.is-scrolled .academic-sidebar-expand {
@@ -123,6 +125,7 @@ body.is-scrolled .academic-sidebar-expand {
   opacity: 0;
   margin: 0 !important;
   pointer-events: none;
+  visibility: hidden;
 }
 
 body.is-scrolled .academic-nav-mobile {
@@ -345,8 +348,6 @@ body.is-scrolled .academic-nav-mobile {
   padding: 0;
 
   li {
-    display: flex;
-    gap: 1rem;
     padding: 0.55rem 0;
     border-bottom: 1px solid $border-color;
 
@@ -356,16 +357,30 @@ body.is-scrolled .academic-nav-mobile {
   }
 }
 
+.academic-news-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.5rem;
+}
+
 .academic-news-date {
-  flex: 0 0 3rem;
+  flex: 0 0 auto;
   font-weight: 600;
   font-size: 0.9rem;
   color: $text-muted;
+  white-space: nowrap;
 }
 
 .academic-news-text {
-  flex: 1;
+  flex: 1 1 auto;
+  min-width: 0;
   font-size: 0.95rem;
+
+  p {
+    display: inline;
+    margin: 0;
+  }
 }
 
 .academic-new-badge {
@@ -636,14 +651,5 @@ body.is-scrolled .academic-nav-mobile {
 
   .academic-project-grid {
     grid-template-columns: 1fr;
-  }
-
-  .academic-news-list li {
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-
-  .academic-news-date {
-    flex: none;
   }
 }

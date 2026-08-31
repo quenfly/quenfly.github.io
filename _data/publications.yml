@@ -1,18 +1,23 @@
 - year: 2026
   papers:
-    - title: "Automated 3D Reinforcement Characterization in Existing Buildings using GPR-to-Point-Cloud Reconstruction and Weighted RANSAC"
+    - title: "A Time- and Memory-Efficient Method for Axis Alignment of Very Large Point Clouds using Orthogonality in Buildings"
       authors: "<strong>Sun, M.</strong>; Wu, L.; Wei, X.; Liang, D.; Chen, Z.; Kwan, H.; Xue, F."
       venue: "Proceedings of the 43rd International Symposium on Automation and Robotics in Construction (ISARC 2026)"
       venue_short: "ISARC"
       links:
         paper: "https://doi.org/10.22260/ISARC2026/0208"
-        arxiv: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7162319"
     - title: "Reconstructing Ground-Penetrating Radargrams into 3D Point Cloud Format for Building Inspection: A Web AR Approach Evaluated by Technology Acceptance Model"
       authors: "<strong>Sun, M.</strong>; Wu, L.; Deng, K.; Li, X.; Xue, F."
       venue: "Proceedings of the 43rd International Symposium on Automation and Robotics in Construction (ISARC 2026)"
       venue_short: "ISARC"
       links:
         paper: "https://doi.org/10.22260/ISARC2026/0299"
+    - title: "Automated 3D Reinforcement Characterization in Existing Buildings using GPR-to-Point-Cloud Reconstruction and Weighted RANSAC"
+      authors: "<strong>Sun, M.</strong>; Wu, L.; Wei, X.; Liang, D.; Chen, Z.; Kwan, H.; Xue, F."
+      venue: "SSRN Preprint"
+      venue_short: "SSRN"
+      links:
+        paper: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7162319"
     - title: "Clarity in DEM cementation predictions: Integrating automated machine learning and interpretability analysis of shear wave velocity"
       authors: "<strong>Sun, M.</strong>; Liang, D.; Wang, J.; Bate, B.; Xue, F."
       venue: "Advanced Engineering Informatics"
@@ -57,26 +62,26 @@
       links:
         paper: "https://doi.org/10.1007/s11440-023-01870-z"
 
-- year: 2022
+- year: "2022 and earlier"
   papers:
     - title: "Discrete Element Modeling of Shear Wave Propagation in Carbonate Precipitate–Cemented Particles"
       authors: "<strong>Sun, M.</strong>; Cao, J.; Cao, J.; Zhang, S.; Chen, Y.; Bate, B."
       venue: "Acta Geotechnica"
       venue_short: "AG"
+      year_label: "2022"
       links:
         paper: "https://doi.org/10.1007/s11440-022-01456-1"
-
-- year: 2021
-  papers:
     - title: "Evaluating iron remediation with limestone using spectral induced polarization and microscopic techniques"
       authors: "Hao, N.; Ye, J.; Zhao, L.; <strong>Sun, M.</strong>; You, Y.; Zhang, C.; Cao, J.; Peng, Y.; Zhang, S.; Zhan, L.-T.; Chen, Y.; Bate, B."
       venue: "Science of the Total Environment"
       venue_short: "STOTEN"
+      year_label: "2021"
       links:
         paper: "https://doi.org/10.1016/j.scitotenv.2021.149641"
     - title: "Internal erosion monitoring with a rowe cell type compression–breakthrough–bender element column"
       authors: "Bate, B.; Chen, X.; Chen, J.; <strong>Sun, M.</strong>; Li, J.; Zhang, S.; Zhang, F.; Zhan, L.; Cao, J."
       venue: "Acta Geotechnica"
       venue_short: "AG"
+      year_label: "2021"
       links:
         paper: "https://doi.org/10.1007/s11440-021-01413-4"

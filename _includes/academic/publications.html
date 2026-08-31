@@ -6,14 +6,15 @@
       <ol class="academic-paper-list">
         {% for paper in group.papers %}
           {% assign short = paper.venue_short | default: "PAPER" %}
-          {% assign color_idx = forloop.index0 | plus: group.year | modulo: 6 %}
+          {% assign thumb_year = paper.year_label | default: group.year %}
+          {% assign color_idx = forloop.index0 | modulo: 6 %}
           <li class="academic-paper">
             <div class="academic-paper-thumb {% unless paper.thumbnail %}academic-paper-thumb-fallback academic-thumb-c{{ color_idx }}{% endunless %}">
               {% if paper.thumbnail %}
                 <img src="{{ paper.thumbnail | relative_url }}" alt="" loading="lazy">
               {% else %}
                 <span class="academic-thumb-label">{{ short }}</span>
-                <span class="academic-thumb-year">{{ group.year }}</span>
+                <span class="academic-thumb-year">{{ thumb_year }}</span>
               {% endif %}
             </div>
             <div class="academic-paper-body">

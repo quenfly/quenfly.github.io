@@ -13,7 +13,7 @@
   description: "Automated 3D reinforcement characterization in existing buildings using GPR-to-point-cloud reconstruction and weighted RANSAC."
   links:
     code: "https://github.com/quenfly/3D-reinforcement-characterization"
-    paper: "https://doi.org/10.22260/ISARC2026/0208"
+    paper: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7162319"
   tags:
     - "GPR"
     - "3D reconstruction"

@@ -4,14 +4,16 @@ title: "Ph.D. Candidate"
 affiliation: "The University of Hong Kong"
 email: "sunmhku01@connect.hku.hk"
 github: "https://github.com/quenfly"
-google_scholar: ""  # reserved — add URL when available
+google_scholar: "https://scholar.google.com/citations?user=YODPv7YAAAAJ&hl=zh-CN"
+researchgate: "https://www.researchgate.net/profile/Meng-Sun-91"
+linkedin: "https://www.linkedin.com/in/meng-sun-177352191"
 
 cv:
   enabled: false
   path: "/assets/files/CV.pdf"
 
 about: |
-  I am a Ph.D. candidate at The University of Hong Kong, supervised by [Prof. Fan Xue](https://frankxue.com/) and co-supervised by Prof. Lu, Wilson W.S. Before my doctoral studies, I worked as an Intelligent R&D Engineer at [China Merchants Bank AI Lab](https://www.cmbchina.com/) (Fintech), focusing on deep learning and big-data applications in finance.
+  I am a Ph.D. candidate at The University of Hong Kong, supervised by [Prof. Fan Xue](https://frankxue.com/) and co-supervised by Prof. Lu, Wilson W.S. Before my doctoral studies, I worked as an Intelligent R&D Engineer at China Merchants Bank AI Lab (Fintech), focusing on deep learning and big-data applications in finance.
 
   I received my M.Eng. from Zhejiang University in the team led by Academician Chen Yunmin, where I was advised by [Prof. Bate Bate](https://person.zju.edu.cn/en/bate), and my B.Eng. from Jilin University.
 

@@ -1,12 +1,30 @@
 (function () {
-  var SCROLL_THRESHOLD = 48;
+  var COLLAPSE_AT = 72;
+  var EXPAND_AT = 12;
+  var collapsed = false;
+  var ticking = false;
 
-  function setCollapsed(collapsed) {
-    document.body.classList.toggle("is-scrolled", collapsed);
+  function setCollapsed(next) {
+    if (collapsed === next) {
+      return;
+    }
+    collapsed = next;
+    document.body.classList.toggle("is-scrolled", next);
   }
 
   function onScroll() {
-    setCollapsed(window.scrollY > SCROLL_THRESHOLD);
+    var y = window.scrollY;
+    if (!collapsed && y > COLLAPSE_AT) {
+      setCollapsed(true);
+    } else if (collapsed && y < EXPAND_AT) {
+      setCollapsed(false);
+    }
+  }
+
+  function onScrollFrame() {
+    ticking = false;
+    onScroll();
+    updateActiveNav();
   }
 
   // Highlight active nav section
@@ -27,8 +45,10 @@
   }
 
   window.addEventListener("scroll", function () {
-    onScroll();
-    updateActiveNav();
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(onScrollFrame);
+    }
   }, { passive: true });
 
   onScroll();
