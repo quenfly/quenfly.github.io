@@ -56,6 +56,11 @@ a {
   display: block;
 }
 
+.academic-content {
+  min-width: 0;
+  width: 100%;
+}
+
 .academic-sidebar {
   display: none;
 }
@@ -135,9 +140,14 @@ body.is-scrolled .academic-nav-mobile {
     display: grid;
     grid-template-columns: $sidebar-width minmax(0, 1fr);
     min-height: 100vh;
+    align-items: start;
   }
 
+  // Explicit placement: only two visible children on desktop
+  // (mobile header is display:none and removed from grid flow)
   .academic-sidebar {
+    grid-column: 1;
+    grid-row: 1;
     display: block;
     position: sticky;
     top: 0;
@@ -146,6 +156,12 @@ body.is-scrolled .academic-nav-mobile {
     border-right: 1px solid $border-color;
     background: $bg-alt;
     overflow-y: auto;
+  }
+
+  .academic-content {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
   }
 
   .academic-sidebar-inner {
