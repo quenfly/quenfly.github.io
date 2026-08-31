@@ -86,8 +86,26 @@ a {
 
 .academic-links-inline {
   flex-direction: row !important;
-  gap: 0.75rem !important;
+  flex-wrap: wrap;
+  gap: 0.65rem 0.85rem !important;
   margin-top: 0.35rem !important;
+}
+
+.academic-links {
+  a,
+  .academic-link-placeholder {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+}
+
+.academic-link-icon {
+  width: 1em;
+  flex-shrink: 0;
+  text-align: center;
+  opacity: 0.82;
+  font-size: 0.92em;
 }
 
 .academic-nav-mobile {
@@ -270,6 +288,9 @@ body.is-scrolled .academic-nav-mobile {
   color: #999;
   font-size: 0.9rem;
   cursor: default;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 // ========== Sections ==========

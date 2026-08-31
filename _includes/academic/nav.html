@@ -11,22 +11,7 @@
     </div>
 
     <div class="academic-links academic-sidebar-expand">
-      <a href="mailto:{{ profile.email }}">Email</a>
-      {% if profile.google_scholar != "" %}
-        <a href="{{ profile.google_scholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-      {% endif %}
-      {% if profile.researchgate != "" %}
-        <a href="{{ profile.researchgate }}" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-      {% endif %}
-      {% if profile.linkedin != "" %}
-        <a href="{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      {% endif %}
-      <a href="{{ profile.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
-      {% if profile.cv.enabled %}
-        <a href="{{ profile.cv.path | relative_url }}">CV</a>
-      {% else %}
-        <span class="academic-link-placeholder" title="CV will be available soon">CV (soon)</span>
-      {% endif %}
+      {% include academic/profile-links.html %}
     </div>
 
     <nav class="academic-nav" aria-label="Primary">
@@ -48,22 +33,7 @@
       <p class="academic-role">{{ profile.title }} · {{ profile.affiliation }}</p>
     </div>
     <div class="academic-links academic-sidebar-expand academic-links-inline">
-      <a href="mailto:{{ profile.email }}">Email</a>
-      {% if profile.google_scholar != "" %}
-        <a href="{{ profile.google_scholar }}" target="_blank" rel="noopener noreferrer">Scholar</a>
-      {% endif %}
-      {% if profile.researchgate != "" %}
-        <a href="{{ profile.researchgate }}" target="_blank" rel="noopener noreferrer">RG</a>
-      {% endif %}
-      {% if profile.linkedin != "" %}
-        <a href="{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      {% endif %}
-      <a href="{{ profile.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
-      {% if profile.cv.enabled %}
-        <a href="{{ profile.cv.path | relative_url }}">CV</a>
-      {% else %}
-        <span class="academic-link-placeholder">CV (soon)</span>
-      {% endif %}
+      {% include academic/profile-links.html compact=true %}
     </div>
     <nav class="academic-nav academic-nav-mobile" aria-label="Primary">
       {% for item in profile.nav %}

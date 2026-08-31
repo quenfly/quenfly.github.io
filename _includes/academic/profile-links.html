@@ -1,0 +1,18 @@
+{% assign profile = site.data.profile %}
+{% assign compact = include.compact | default: false %}
+<a href="mailto:{{ profile.email }}"><i class="fas fa-envelope academic-link-icon" aria-hidden="true"></i>Email</a>
+{% if profile.google_scholar != "" %}
+  <a href="{{ profile.google_scholar }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap academic-link-icon" aria-hidden="true"></i>{% if compact %}Scholar{% else %}Google Scholar{% endif %}</a>
+{% endif %}
+{% if profile.researchgate != "" %}
+  <a href="{{ profile.researchgate }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-researchgate academic-link-icon" aria-hidden="true"></i>{% if compact %}RG{% else %}ResearchGate{% endif %}</a>
+{% endif %}
+{% if profile.linkedin != "" %}
+  <a href="{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin academic-link-icon" aria-hidden="true"></i>LinkedIn</a>
+{% endif %}
+<a href="{{ profile.github }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github academic-link-icon" aria-hidden="true"></i>GitHub</a>
+{% if profile.cv.enabled %}
+  <a href="{{ profile.cv.path | relative_url }}"><i class="fas fa-file-pdf academic-link-icon" aria-hidden="true"></i>CV</a>
+{% else %}
+  <span class="academic-link-placeholder"><i class="fas fa-file-pdf academic-link-icon" aria-hidden="true"></i>CV</span>
+{% endif %}

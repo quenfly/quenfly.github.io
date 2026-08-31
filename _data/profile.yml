@@ -13,9 +13,9 @@ cv:
   path: "/assets/files/CV.pdf"
 
 about: |
-  I am a Ph.D. candidate at The University of Hong Kong, supervised by [Prof. Fan Xue](https://frankxue.com/) and co-supervised by Prof. Lu, Wilson W.S. Before my doctoral studies, I worked as an Intelligent R&D Engineer at China Merchants Bank AI Lab (Fintech), focusing on deep learning and big-data applications in finance.
+  I received my B.Eng. from Jilin University and my M.Eng. from Zhejiang University in the team led by Academician Chen Yunmin, where I was advised by [Prof. Bate Bate](https://person.zju.edu.cn/en/bate). I am now a Ph.D. candidate at The University of Hong Kong, supervised by [Prof. Fan Xue](https://frankxue.com/) and co-supervised by Prof. Lu, Wilson W.S.
 
-  I received my M.Eng. from Zhejiang University in the team led by Academician Chen Yunmin, where I was advised by [Prof. Bate Bate](https://person.zju.edu.cn/en/bate), and my B.Eng. from Jilin University.
+  Before my doctoral studies, I worked at China Merchants Bank AI Lab, where I was responsible for large language models and quantitative finance.
 
   My research focuses on digital twins for built assets, ground-penetrating radar (GPR) to 3D reconstruction, explainable AI for engineering simulation, and spatial intelligence in construction. I work at the intersection of geotechnical simulation, computer vision, and intelligent construction management.
 
