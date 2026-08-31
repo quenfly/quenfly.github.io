@@ -1,0 +1,1 @@
+# Optional publication thumbnails\n# Add images here and set thumbnail: /assets/papers/your-image.png in _data/publications.yml\n# Papers without a thumbnail get an auto-generated venue+year color card.

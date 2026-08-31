@@ -1,0 +1,20 @@
+{% assign others = site.data.others %}
+<section class="academic-section" id="others">
+  <div class="academic-container">
+    <h2 class="academic-section-title">Others</h2>
+
+    <h3 class="academic-subsection-title">Awards</h3>
+    <ul class="academic-simple-list">
+      {% for award in others.awards %}
+        <li><strong>{{ award.year }}</strong> — {{ award.title }}</li>
+      {% endfor %}
+    </ul>
+
+    <h3 class="academic-subsection-title">Languages</h3>
+    <p class="academic-languages">
+      {% for lang in others.languages %}
+        <span>{{ lang }}</span>{% unless forloop.last %}<span class="academic-lang-sep">·</span>{% endunless %}
+      {% endfor %}
+    </p>
+  </div>
+</section>

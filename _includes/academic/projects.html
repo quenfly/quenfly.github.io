@@ -1,0 +1,37 @@
+<section class="academic-section academic-section-alt" id="projects">
+  <div class="academic-container">
+    <h2 class="academic-section-title">Projects</h2>
+    <div class="academic-project-grid">
+      {% for project in site.data.projects %}
+        <article class="academic-project-card">
+          <h3 class="academic-project-name">
+            {% if project.links.project %}
+              <a href="{{ project.links.project }}" target="_blank" rel="noopener noreferrer">{{ project.name }}</a>
+            {% elsif project.links.code %}
+              <a href="{{ project.links.code }}" target="_blank" rel="noopener noreferrer">{{ project.name }}</a>
+            {% elsif project.links.paper %}
+              <a href="{{ project.links.paper }}" target="_blank" rel="noopener noreferrer">{{ project.name }}</a>
+            {% else %}
+              {{ project.name }}
+            {% endif %}
+          </h3>
+          <p class="academic-project-desc">{{ project.description }}</p>
+          {% if project.tags %}
+            <div class="academic-tags academic-tags-compact">
+              {% for tag in project.tags %}
+                <span class="academic-tag academic-tag-sm">{{ tag }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+          {% if project.links %}
+            <p class="academic-paper-links">
+              {% if project.links.paper %}<a href="{{ project.links.paper }}" target="_blank" rel="noopener noreferrer">[Paper]</a>{% endif %}
+              {% if project.links.code %}<a href="{{ project.links.code }}" target="_blank" rel="noopener noreferrer">[Code]</a>{% endif %}
+              {% if project.links.project %}<a href="{{ project.links.project }}" target="_blank" rel="noopener noreferrer">[Website]</a>{% endif %}
+            </p>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

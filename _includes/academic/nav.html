@@ -1,0 +1,46 @@
+{% assign profile = site.data.profile %}
+<aside class="academic-sidebar" id="sidebar" aria-label="Site sidebar">
+  <div class="academic-sidebar-inner">
+    <div class="academic-identity academic-sidebar-expand">
+      <h1 class="academic-name">
+        <a href="#top">{{ profile.name }}</a>
+        {% if profile.name_cn %}<span class="academic-name-cn">{{ profile.name_cn }}</span>{% endif %}
+      </h1>
+      <p class="academic-role">{{ profile.title }}</p>
+      <p class="academic-affiliation">{{ profile.affiliation }}</p>
+    </div>
+
+    <div class="academic-links academic-sidebar-expand">
+      {% include academic/profile-links.html %}
+    </div>
+
+    <nav class="academic-nav" aria-label="Primary">
+      {% include academic/nav-links.html %}
+    </nav>
+  </div>
+</aside>
+
+<!-- Mobile: full header scrolls away; compact fixed nav appears afterward -->
+<div class="academic-mobile-full" id="mobile-header-full">
+  <div class="academic-mobile-full-inner">
+    <div class="academic-identity">
+      <h1 class="academic-name academic-name-sm">
+        <a href="#top">{{ profile.name }}</a>
+        {% if profile.name_cn %}<span class="academic-name-cn">{{ profile.name_cn }}</span>{% endif %}
+      </h1>
+      <p class="academic-role">{{ profile.title }} · {{ profile.affiliation }}</p>
+    </div>
+    <div class="academic-links academic-links-inline">
+      {% include academic/profile-links.html compact=true %}
+    </div>
+    <nav class="academic-nav academic-nav-mobile" aria-label="Primary">
+      {% include academic/nav-links.html %}
+    </nav>
+  </div>
+</div>
+
+<div class="academic-mobile-compact" id="mobile-header-compact" aria-hidden="true">
+  <nav class="academic-nav academic-nav-mobile academic-nav-compact" aria-label="Primary">
+    {% include academic/nav-links.html %}
+  </nav>
+</div>
