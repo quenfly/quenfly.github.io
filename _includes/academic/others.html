@@ -10,18 +10,11 @@
       {% endfor %}
     </ul>
 
-    <h3 class="academic-subsection-title">Skills</h3>
-    <ul class="academic-simple-list">
-      <li><strong>Programming:</strong> {{ others.skills.programming }}</li>
-      <li><strong>Machine learning:</strong> {{ others.skills.ml }}</li>
-      <li><strong>Other:</strong> {{ others.skills.other }}</li>
-    </ul>
-
     <h3 class="academic-subsection-title">Languages</h3>
-    <ul class="academic-simple-list">
+    <p class="academic-languages">
       {% for lang in others.languages %}
-        <li>{{ lang }}</li>
+        <span>{{ lang }}</span>{% unless forloop.last %}<span class="academic-lang-sep">·</span>{% endunless %}
       {% endfor %}
-    </ul>
+    </p>
   </div>
 </section>

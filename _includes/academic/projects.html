@@ -1,9 +1,9 @@
 <section class="academic-section academic-section-alt" id="projects">
   <div class="academic-container">
     <h2 class="academic-section-title">Projects</h2>
-    <ul class="academic-project-list">
+    <div class="academic-project-grid">
       {% for project in site.data.projects %}
-        <li class="academic-project">
+        <article class="academic-project-card">
           <h3 class="academic-project-name">
             {% if project.links.project %}
               <a href="{{ project.links.project }}" target="_blank" rel="noopener noreferrer">{{ project.name }}</a>
@@ -30,8 +30,8 @@
               {% if project.links.project %}<a href="{{ project.links.project }}" target="_blank" rel="noopener noreferrer">[Website]</a>{% endif %}
             </p>
           {% endif %}
-        </li>
+        </article>
       {% endfor %}
-    </ul>
+    </div>
   </div>
 </section>

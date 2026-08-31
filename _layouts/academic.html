@@ -2,14 +2,17 @@
 <html lang="en">
 {% include academic/head.html %}
 <body>
-  {% include academic/nav.html %}
-  <main class="academic-main">
-    {% include academic/about.html %}
-    {% include academic/news.html %}
-    {% include academic/publications.html %}
-    {% include academic/projects.html %}
-    {% include academic/others.html %}
-  </main>
-  {% include academic/footer.html %}
+  <div class="academic-shell">
+    {% include academic/nav.html %}
+    <main class="academic-main">
+      {% include academic/about.html %}
+      {% include academic/news.html %}
+      {% include academic/publications.html %}
+      {% include academic/projects.html %}
+      {% include academic/others.html %}
+      {% include academic/footer.html %}
+    </main>
+  </div>
+  <script src="{{ '/assets/js/academic.js' | relative_url }}"></script>
 </body>
 </html>

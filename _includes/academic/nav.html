@@ -1,7 +1,7 @@
 {% assign profile = site.data.profile %}
-<header class="academic-header" id="top">
-  <div class="academic-container academic-header-inner">
-    <div class="academic-identity">
+<aside class="academic-sidebar" id="sidebar" aria-label="Site sidebar">
+  <div class="academic-sidebar-inner">
+    <div class="academic-identity academic-sidebar-expand">
       <h1 class="academic-name">
         <a href="#top">{{ profile.name }}</a>
         {% if profile.name_cn %}<span class="academic-name-cn">{{ profile.name_cn }}</span>{% endif %}
@@ -9,12 +9,8 @@
       <p class="academic-role">{{ profile.title }}</p>
       <p class="academic-affiliation">{{ profile.affiliation }}</p>
     </div>
-    <nav class="academic-nav" aria-label="Primary">
-      {% for item in profile.nav %}
-        <a href="{{ item.anchor }}">{{ item.name }}</a>
-      {% endfor %}
-    </nav>
-    <div class="academic-links">
+
+    <div class="academic-links academic-sidebar-expand">
       <a href="mailto:{{ profile.email }}">Email</a>
       {% if profile.google_scholar != "" %}
         <a href="{{ profile.google_scholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>
@@ -26,5 +22,39 @@
         <span class="academic-link-placeholder" title="CV will be available soon">CV (soon)</span>
       {% endif %}
     </div>
+
+    <nav class="academic-nav" aria-label="Primary">
+      {% for item in profile.nav %}
+        <a href="{{ item.anchor }}" class="academic-nav-link">{{ item.name }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</aside>
+
+<!-- Mobile top bar (mirrors sidebar; collapsed on scroll) -->
+<header class="academic-mobile-header" id="mobile-header">
+  <div class="academic-mobile-header-inner">
+    <div class="academic-identity academic-sidebar-expand">
+      <h1 class="academic-name academic-name-sm">
+        <a href="#top">{{ profile.name }}</a>
+        {% if profile.name_cn %}<span class="academic-name-cn">{{ profile.name_cn }}</span>{% endif %}
+      </h1>
+      <p class="academic-role">{{ profile.title }} · {{ profile.affiliation }}</p>
+    </div>
+    <div class="academic-links academic-sidebar-expand academic-links-inline">
+      <a href="mailto:{{ profile.email }}">Email</a>
+      <a href="{{ profile.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+      {% if profile.cv.enabled %}
+        <a href="{{ profile.cv.path | relative_url }}">CV</a>
+      {% else %}
+        <span class="academic-link-placeholder">CV (soon)</span>
+      {% endif %}
+    </div>
+    <nav class="academic-nav academic-nav-mobile" aria-label="Primary">
+      {% for item in profile.nav %}
+        <a href="{{ item.anchor }}" class="academic-nav-link">{{ item.name }}</a>
+      {% endfor %}
+    </nav>
   </div>
 </header>
+<div id="top"></div>

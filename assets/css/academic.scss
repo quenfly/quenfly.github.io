@@ -10,8 +10,10 @@ $link-hover: #005a87;
 $bg-color: #ffffff;
 $bg-alt: #f7f8fa;
 $border-color: #e5e7eb;
-$max-width: 760px;
+$sidebar-width: 240px;
+$content-max: 760px;
 $font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+$mobile-bp: 900px;
 
 *,
 *::before,
@@ -44,30 +46,155 @@ a {
 }
 
 .academic-container {
-  max-width: $max-width;
+  max-width: $content-max;
   margin: 0 auto;
   padding: 0 1.25rem;
 }
 
-.academic-header {
+// ========== Shell / Sidebar (desktop) ==========
+.academic-shell {
+  display: block;
+}
+
+.academic-sidebar {
+  display: none;
+}
+
+.academic-mobile-header {
+  display: block;
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid $border-color;
 }
 
-.academic-header-inner {
-  padding-top: 1.25rem;
-  padding-bottom: 1rem;
+.academic-mobile-header-inner {
+  padding: 0.85rem 1.25rem 0.75rem;
+}
+
+.academic-name-sm {
+  font-size: 1.25rem !important;
+}
+
+.academic-links-inline {
+  flex-direction: row !important;
+  gap: 0.75rem !important;
+  margin-top: 0.35rem !important;
+}
+
+.academic-nav-mobile {
+  margin-top: 0.65rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid $border-color;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.15rem 0.35rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .academic-nav-link {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+}
+
+// Collapse expand parts on scroll (mobile + desktop sidebar)
+.academic-sidebar-expand {
+  max-height: 220px;
+  opacity: 1;
+  overflow: hidden;
+  transition: max-height 0.28s ease, opacity 0.22s ease, margin 0.22s ease;
+}
+
+body.is-scrolled .academic-sidebar-expand {
+  max-height: 0;
+  opacity: 0;
+  margin: 0 !important;
+  pointer-events: none;
+}
+
+body.is-scrolled .academic-nav-mobile {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+@media (min-width: $mobile-bp) {
+  .academic-mobile-header {
+    display: none;
+  }
+
+  .academic-shell {
+    display: grid;
+    grid-template-columns: $sidebar-width minmax(0, 1fr);
+    min-height: 100vh;
+  }
+
+  .academic-sidebar {
+    display: block;
+    position: sticky;
+    top: 0;
+    align-self: start;
+    height: 100vh;
+    border-right: 1px solid $border-color;
+    background: $bg-alt;
+    overflow-y: auto;
+  }
+
+  .academic-sidebar-inner {
+    padding: 2rem 1.25rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .academic-sidebar .academic-identity {
+    margin-bottom: 1rem;
+  }
+
+  .academic-sidebar .academic-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+
+    a {
+      font-weight: 500;
+    }
+  }
+
+  .academic-sidebar .academic-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  body.is-scrolled .academic-sidebar .academic-nav {
+    margin-top: 0.25rem;
+  }
+
+  .academic-main {
+    min-width: 0;
+  }
 }
 
 .academic-name {
   margin: 0;
-  font-size: 1.75rem;
+  font-size: 1.55rem;
   font-weight: 700;
   letter-spacing: -0.02em;
+  line-height: 1.25;
 
   a {
     color: inherit;
@@ -83,50 +210,40 @@ a {
 .academic-name-cn {
   font-weight: 400;
   color: $text-muted;
-  margin-left: 0.35rem;
-  font-size: 1.25rem;
+  margin-left: 0.3rem;
+  font-size: 1.1rem;
 }
 
 .academic-role {
-  margin: 0.25rem 0 0;
-  font-size: 1rem;
+  margin: 0.3rem 0 0;
+  font-size: 0.92rem;
   color: $text-muted;
 }
 
 .academic-affiliation {
-  margin: 0.15rem 0 0;
-  font-size: 0.95rem;
+  margin: 0.1rem 0 0;
+  font-size: 0.88rem;
   color: $text-muted;
 }
 
-.academic-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.25rem;
-  margin-top: 1rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid $border-color;
+.academic-nav-link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: $text-color;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  text-decoration: none;
 
-  a {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: $text-color;
-
-    &:hover {
-      color: $link-color;
-    }
+  &:hover {
+    color: $link-color;
+    background: rgba(0, 120, 180, 0.08);
+    text-decoration: none;
   }
-}
 
-.academic-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
-  margin-top: 0.65rem;
-  font-size: 0.9rem;
-
-  a {
-    font-weight: 500;
+  &.is-active {
+    color: $link-color;
+    background: rgba(0, 120, 180, 0.12);
+    font-weight: 600;
   }
 }
 
@@ -136,12 +253,13 @@ a {
   cursor: default;
 }
 
+// ========== Sections ==========
 .academic-main {
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
 }
 
 .academic-section {
-  padding: 2.5rem 0;
+  padding: 2.25rem 0;
 
   &-alt {
     background: $bg-alt;
@@ -161,7 +279,6 @@ a {
   margin: 1.75rem 0 0.75rem;
   font-size: 1.05rem;
   font-weight: 600;
-  color: $text-color;
 
   &:first-of-type {
     margin-top: 0.5rem;
@@ -205,6 +322,7 @@ a {
   margin-top: 0.5rem;
 }
 
+// ========== News ==========
 .academic-news-list {
   list-style: none;
   margin: 0;
@@ -234,6 +352,48 @@ a {
   font-size: 0.95rem;
 }
 
+.academic-new-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, #e11d48, #f97316);
+  padding: 0.12rem 0.4rem;
+  border-radius: 4px;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+  animation: academic-new-pulse 1.8s ease-in-out infinite;
+  box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.45);
+}
+
+@keyframes academic-new-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.45);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(225, 29, 72, 0);
+    transform: scale(1.04);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(225, 29, 72, 0);
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .academic-new-badge {
+    animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+// ========== Publications (Frank Xue style thumbs) ==========
 .academic-year {
   margin: 1.75rem 0 0.75rem;
   font-size: 1.1rem;
@@ -252,7 +412,9 @@ a {
 }
 
 .academic-paper {
-  padding: 0.85rem 0;
+  display: flex;
+  gap: 0.9rem;
+  padding: 0.9rem 0;
   border-bottom: 1px solid $border-color;
 
   &:last-child {
@@ -260,22 +422,74 @@ a {
   }
 }
 
+.academic-paper-thumb {
+  flex: 0 0 88px;
+  width: 88px;
+  height: 66px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid $border-color;
+  background: #f0f2f5;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.academic-paper-thumb-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 0.25rem;
+}
+
+.academic-thumb-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.academic-thumb-year {
+  font-size: 0.68rem;
+  opacity: 0.9;
+  margin-top: 0.15rem;
+}
+
+.academic-thumb-c0 { background: linear-gradient(145deg, #1e3a5f, #3b82f6); }
+.academic-thumb-c1 { background: linear-gradient(145deg, #14532d, #22c55e); }
+.academic-thumb-c2 { background: linear-gradient(145deg, #7c2d12, #f97316); }
+.academic-thumb-c3 { background: linear-gradient(145deg, #4c1d95, #8b5cf6); }
+.academic-thumb-c4 { background: linear-gradient(145deg, #831843, #ec4899); }
+.academic-thumb-c5 { background: linear-gradient(145deg, #164e63, #06b6d4); }
+
+.academic-paper-body {
+  flex: 1;
+  min-width: 0;
+}
+
 .academic-paper-title {
   margin: 0 0 0.25rem;
-  font-size: 0.98rem;
+  font-size: 0.96rem;
   font-weight: 600;
   line-height: 1.45;
 }
 
 .academic-paper-authors {
   margin: 0 0 0.15rem;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: $text-muted;
 }
 
 .academic-paper-venue {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 .academic-paper-links {
@@ -304,25 +518,33 @@ a {
   }
 }
 
-.academic-project-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+// ========== Projects (card grid like 邱锡鹏) ==========
+.academic-project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 
-.academic-project {
-  padding: 1rem 0;
-  border-bottom: 1px solid $border-color;
+.academic-project-card {
+  background: $bg-color;
+  border: 1px solid $border-color;
+  border-radius: 10px;
+  padding: 1.1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 
-  &:last-child {
-    border-bottom: none;
+  &:hover {
+    border-color: #b6d4e8;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
   }
 }
 
 .academic-project-name {
-  margin: 0 0 0.35rem;
-  font-size: 1rem;
+  margin: 0 0 0.4rem;
+  font-size: 0.98rem;
   font-weight: 600;
+  line-height: 1.35;
 
   a {
     color: inherit;
@@ -335,10 +557,12 @@ a {
 
 .academic-project-desc {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   color: $text-muted;
+  flex: 1;
 }
 
+// ========== Others ==========
 .academic-simple-list {
   margin: 0;
   padding-left: 1.25rem;
@@ -349,8 +573,21 @@ a {
   }
 }
 
+.academic-languages {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: $text-color;
+}
+
+.academic-lang-sep {
+  color: #bbb;
+  margin: 0 0.45rem;
+}
+
+// ========== Footer ==========
 .academic-footer {
-  padding: 1.5rem 0 2rem;
+  padding: 1.5rem 1.25rem 2rem;
   border-top: 1px solid $border-color;
   text-align: center;
 
@@ -361,9 +598,28 @@ a {
   }
 }
 
+// ========== Responsive tweaks ==========
 @media (max-width: 600px) {
-  .academic-name {
-    font-size: 1.45rem;
+  .academic-paper {
+    gap: 0.65rem;
+  }
+
+  .academic-paper-thumb {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 52px;
+  }
+
+  .academic-thumb-label {
+    font-size: 0.58rem;
+  }
+
+  .academic-thumb-year {
+    font-size: 0.55rem;
+  }
+
+  .academic-project-grid {
+    grid-template-columns: 1fr;
   }
 
   .academic-news-list li {
@@ -373,11 +629,5 @@ a {
 
   .academic-news-date {
     flex: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
   }
 }

@@ -5,7 +5,12 @@
       {% for item in site.data.news %}
         <li>
           <span class="academic-news-date">{{ item.date }}</span>
-          <span class="academic-news-text">{{ item.text }}</span>
+          <span class="academic-news-text">
+            {% if item.new %}
+              <span class="academic-new-badge" aria-label="New">New</span>
+            {% endif %}
+            {{ item.text }}
+          </span>
         </li>
       {% endfor %}
     </ul>

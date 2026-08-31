@@ -1,7 +1,7 @@
 name: "Meng Sun"
 name_cn: "孙孟"
 title: "Ph.D. Candidate"
-affiliation: "Department of Real Estate and Construction, The University of Hong Kong"
+affiliation: "The University of Hong Kong"
 email: "sunmhku01@connect.hku.hk"
 github: "https://github.com/quenfly"
 google_scholar: ""  # reserved — add URL when available
@@ -11,7 +11,7 @@ cv:
   path: "/assets/files/CV.pdf"
 
 about: |
-  I am a Ph.D. candidate in the Department of Real Estate and Construction at The University of Hong Kong, supervised by [Prof. Fan Xue](https://frankxue.com/). I received my M.Eng. in Civil Engineering from Zhejiang University, where I was advised by [Prof. Bate Bate](https://person.zju.edu.cn/en/bate), and my B.Eng. in Geological Engineering from Jilin University.
+  I am a Ph.D. candidate at The University of Hong Kong, supervised by [Prof. Fan Xue](https://frankxue.com/). I received my M.Eng. from Zhejiang University, where I was advised by [Prof. Bate Bate](https://person.zju.edu.cn/en/bate), and my B.Eng. from Jilin University.
 
   My research focuses on digital twins for built assets, ground-penetrating radar (GPR) to 3D reconstruction, explainable AI for engineering simulation, and spatial intelligence in construction. I work at the intersection of geotechnical simulation, computer vision, and intelligent construction management.
 
